@@ -22,7 +22,6 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
 
     protected $_filters = array(
         'public_navigation_admin_bar',
-        'public_show_admin_bar',
         'guest_user_widgets',
         'admin_navigation_main'
     );
@@ -181,11 +180,6 @@ class GuestUserPlugin extends Omeka_Plugin_AbstractPlugin
                             "$uaAlias.user_id = users.id", array());
             $select->order("$uaAlias.added $dir");
         }
-    }
-
-    public function filterPublicShowAdminBar($show)
-    {
-        return true;
     }
 
     public function filterAdminNavigationMain($navLinks)
